@@ -20,6 +20,7 @@ J'ai copié la commande incluant le texte du sujet ce qui a généré une erreur
 docker ps — le conteneur api doit apparaître avec le statut Up...
 ```
 L'interpréteur a retourné le message suivant : docker: 'docker ps' accepts no arguments. Je l'ai corrigée.
+![Conteneur actif et réponse de l'API](erreur.png)
 
 ### 3. Lancement et vérification du conteneur
 Le conteneur s'est correctement exécuté avec le statut "Up".
@@ -27,7 +28,7 @@ Le conteneur s'est correctement exécuté avec le statut "Up".
 docker run -d -p 5000:5000 --name api mini-api:1.0
 docker ps
 ```
-
+![Conteneur actif et réponse de l'API](dockerps.png)
 ### 4. Tests d'interrogation et de logs
 La disponibilité de l'API a été validée via un appel curl local, qui a retourné le statut attendu :
 ```
@@ -38,6 +39,7 @@ Les logs internes du conteneur ont ensuite été consultés pour confirmer l'enr
 ```
 docker logs api
 ```
+![Conteneur actif et réponse de l'API](dockerlogsapi.png)
 ### 5. Inspection interne du conteneur
 En utilisant:
 ```docker exec -it api bash
@@ -57,3 +59,4 @@ Pour finaliser l'exercice, le conteneur en cours d'exécution a été arrêté, 
 ```
 docker stop api && docker rm api && docker rmi mini-api:1.0
 ```
+![Conteneur actif et réponse de l'API](last.png)
