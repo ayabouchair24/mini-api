@@ -30,7 +30,8 @@ docker ps
 
 ### 4. Tests d'interrogation et de logs
 La disponibilité de l'API a été validée via un appel curl local, qui a retourné le statut attendu :
-```curl http://localhost:5000/health
+```
+curl http://localhost:5000/health
 ```
 Retour de l'API : {"hostname":"7d9e816a574c","status":"ok"}
 Les logs internes du conteneur ont ensuite été consultés pour confirmer l'enregistrement de la requête réseau :
